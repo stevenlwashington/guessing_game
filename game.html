@@ -1,0 +1,22 @@
+<script>
+
+var guess, answer, message;
+
+var rand = function(min, max){
+  return Math.floor(Math.random() * (min - max)) + min;
+}
+
+answer = 85;
+console.log(answer)
+
+guess = prompt("How many games will the Seattle Mariners win in 2015?");
+
+if (guess >= answer) {
+  message = "Mariners should be a playoff team"
+} else {
+  message = "Doesn't look like the Mariners will be a playoff team"
+}
+
+alert(message);
+
+</script>
