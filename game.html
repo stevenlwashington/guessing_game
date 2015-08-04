@@ -1,33 +1,21 @@
 <script>
 
-var guess, playoffThreshold, message;
+var guess, answer, message;
 
-// var rand = function(min, max){
-//   return Math.floor(Math.random() * (min - max)) + min;
-// }
-
-function reGuess() {
-  var message = alert("C'mon, they can win more than 70.  Try again.");
-  guess = prompt("How many games will the Seattle Mariners win in 2015?");
-
-playoffThreshold = 85; //Assumes 85 wins will get mariners into playoffs
-console.log(playoffThreshold);
-
-guess = prompt("How many games will the Seattle Mariners win in 2015?");
-
-while (guess<70) {
-  guess = reGuess();
-  if (guess >= 70) {
-    break;
-  } else {
-    reGuess();
-  }
+var rand = function(min, max){
+  return Math.floor(Math.random() * (min - max)) + min;
 }
 
-if (guess >= playoffThreshold) {
-  message = "Mariners should be a playoff team";
+answer = 85;
+console.log(answer);
+
+guess = prompt('How many games will the Seattle Mariners win in 2015?');
+
+if (guess >= answer) {
+  message = 'Mariners should be a playoff team';
+
 } else {
-  message = "Doesn't look like the Mariners will be a playoff team";
+  message = 'Does not look like the Mariners will be a playoff team';
 }
 
 alert(message);
