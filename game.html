@@ -1,27 +1,29 @@
 <script>
 
-var guess, answer, message;
+var guess, playoffThreshold, message;
 
-<<<<<<< HEAD
-var rand = function(min, max){
-  return Math.floor(Math.random() * (min - max)) + min;
-}
-=======
 // var rand = function(min, max){
 //   return Math.floor(Math.random() * (min - max)) + min;
 // } we shouldve deleted this
 
 function reGuess() {
-  var message = alert("C'mon, they can win more than 70.  Try again.");
-  guess = prompt("How many games will the Seattle Mariners win in 2015?");
->>>>>>> 473980898186cbbe1fe7b491ecbc0adf1b19666d
-
-answer = 85;
-console.log(answer);
+  var message = alert('C\'mon, they can win more than 70.  Try again.');
+  guess = prompt('How many games will the Seattle Mariners win in 2015?');
+  playoffThreshold = 85;
+}
+playoffThreshold = 85;
+console.log(playoffThreshold);
 
 guess = prompt('How many games will the Seattle Mariners win in 2015?');
-
-if (guess >= answer) {
+while (guess<70) {
+  guess = reGuess();
+  if (guess >= 70) {
+    break;
+  } else {
+    reGuess();
+  }
+}
+if (guess >= playoffThreshold) {
   message = 'Mariners should be a playoff team';
 
 } else {
