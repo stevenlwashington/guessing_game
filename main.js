@@ -26,11 +26,15 @@
      } else {
       message = 'Does not look like the Mariners will be a playoff team';
       }
-      alert(message);
+      //alert(message);
     }
   }
+
 var game1 = new Coolgame();
     game1.startGame();
     game1.checkAnswer();
+
+var marinersWin = document.getElementById('marinerswin');
+marinersWin.innerHTML = message;
 
 </script>
