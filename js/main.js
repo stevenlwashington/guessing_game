@@ -1,19 +1,22 @@
-<script>
+//still having trouble getting my actual game to work
+//now that it is somewhat integrated into my HTML
 
-  var Coolgame = function(){
+'use strict'
+
+  var coolGame = function(){
     this.wins = 0;
-    this.startGame = function() {
-      playoffThreshold = 88;
-      console.log(playoffThreshold);
-      guess = prompt('Out of 162 games How many will the Seattle Mariners win in 2015?');
+    this.startGame = function(){
+    this.playoffThreshold = 88;
+      //console.log(playoffThreshold)
+      guess = prompt('The Mariners will need to win this many games to make the playoffs. Take a swing.');
       };
-    this.checkAnswer = function() {
-      reGuess = function ()  {
-      var message = alert('C\'mon, they can win more than 70.  Try again.');
-      guess = prompt('How many games will the Seattle Mariners win in 2015?');
+     this.checkAnswer = function(){
+      reGuess = function(){
+      var message = alert('C\'mon, they can win at least 70. Try again.');
+      guess = prompt('The Mariners will need to win this many games to make the playoffs. Take a swing.');
       playoffThreshold = 88;
     }
-      while (guess<70) {
+      while (guess < 70) {
         guess = reGuess();
       if (guess >= 70) {
         break;
@@ -21,31 +24,26 @@
         reGuess();
         }
       }
-
-//added 8/7 10:40a
-if (guess > playoffThreshold){
-  hint1 = 'You guessed too high. Try a lower number';
-} else {
-  hint1 = 'You guessed too low. Try a higher number';
-}
-
-
-
-
       if (guess >= playoffThreshold) {
-      message = 'Mariners should be a playoff team';
+      message = 'October baseball! Mariners should be a playoff team.';
      } else {
-      message = 'Does not look like the Mariners will be a playoff team';
+      message = 'Does not look like the Mariners will be a playoff team. Maybe the Mariner Moose should become the new owner.';
       }
-      //alert(message);
-    }
-  }
 
-var game1 = new Coolgame();
+    if(guess != playoffThreshold) {
+      var result = document.getElementById('result');
+      result.innerHTML = 'Try again, dummy.';
+    }
+    else if(guess == playoffThreshold){
+        var result = document.getElementById('result');
+        result.innerHTML = 'Does not look like the Mariners will be a playoff team. Maybe the Mariner Moose should become the new owner.';
+      }
+  }
+}
+var game1 = new coolGame();
     game1.startGame();
     game1.checkAnswer();
 
-var marinersWin = document.getElementById('marinersWin');
-marinersWin.innerHTML = message;
+//note to self
+//JS console is saying line 11:guess is not defined. why!?
 
-</script>
